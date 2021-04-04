@@ -1,6 +1,6 @@
 # StarWars blog database
 
-Inside he `src/models.py` file you will find a couple of classes describing an example database.
+Inside the `src/models.py` file you will find a couple of classes describing an example database.
 
 Here is a 4min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
 
@@ -11,7 +11,7 @@ We are going to be creating the Entity Relationship Diagram for your StarWars Bl
 
 > 🔥 You can use this FREE tool to practice your diagram for the first time: https://app.quickdatabasediagrams.com/#/d/
 
-## 💻 Instalation
+## 💻 Installation
 
 1. Get inside the environment `$ pipenv shell`
 
@@ -24,7 +24,7 @@ We are going to be creating the Entity Relationship Diagram for your StarWars Bl
 
 ## 📝Instructions
 
-Your Job is to update the `src/models.py` file with the code needed to replicate the instagram data model.
+Your Job is to update the `src/models.py` file with the code needed to replicate the StarWars data model.
 
 The project is using the SQLAlchemy Python library to generate the database.
 
