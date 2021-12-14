@@ -1,5 +1,7 @@
 # StarWars blog database
 
+**Important**: To do this activity you need to `fork` this repo into your **Github** account and then open the forked repo on Gitpod.
+
 Inside the `src/models.py` file you will find a couple of classes describing an example database.
 
 Here is a 4min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
