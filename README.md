@@ -2,7 +2,7 @@
 
 **Important**: To do this activity you need to `fork` this repo into your **Github** account and then open the forked repo on Gitpod.
 
-Inside he `src/models.py` file you will find a couple of classes describing an example database.
+Inside the `src/models.py` file you will find a couple of classes describing an example database.
 
 Here is a 4min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
 
@@ -38,6 +38,6 @@ The project is using the SQLAlchemy Python library to generate the database.
 - What properties should go inside the user? or inside the Character or Favorite table?
 - What are the relationships between those tables?
 - Please add at least 4 models with all of its properties.
-- Generate the diagram.png file at the end by running `$ python3 models.py` on the console.
+- Generate the `diagram.png` file at the end by running `$ python3 models.py` on the console.
 
 
