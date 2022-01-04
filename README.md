@@ -26,7 +26,7 @@ We are going to be creating the Entity Relationship Diagram for your StarWars Bl
 
 ## 📝Instructions
 
-Your Job is to update the `src/models.py` file with the code needed to replicate the Starwars data model.
+Your Job is to update the `src/models.py` file with the code needed to replicate the StarWars data model.
 
 The project is using the SQLAlchemy Python library to generate the database.
 
