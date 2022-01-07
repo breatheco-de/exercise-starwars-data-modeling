@@ -9,8 +9,8 @@ from eralchemy import render_er
 Base = declarative_base()
 
 #user class 
-class UserName_Dates(Base):
-    __tablename__ = 'UserName_Dates'
+class UserName(Base):
+    __tablename__ = 'UserName'
     id = Column(Integer, primary_key=True)
     username = Column(String(20))
     email = Column(String(25))
