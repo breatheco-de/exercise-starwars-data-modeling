@@ -21,12 +21,26 @@ class Planetas(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     population = Column(String(250), nullable=False)
+    diameter = Column(String(250), nullable=False)
+    rotation_period = Column(String(250), nullable=False)
+    orbital_period = Column(String(250), nullable=False)
+    gravity = Column(String(250), nullable=False)
+    climate = Column(String(250), nullable=False)
+    surface_water = Column(String(250), nullable=False)
+    terrain = Column(String(250), nullable=False)
+
 
 class Characters(Base):
     __tablename__ = 'chraracters'
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     height = Column(String(250), nullable=False)
+    gender = Column(String(250), nullable=False)
+    birth_year = Column(String(250), nullable=False)
+    nameye_colore = Column(String(250), nullable=False)
+    skin_color = Column(String(250), nullable=False)
+    hair_color = Column(String(250), nullable=False)
+    mass = Column(String(250), nullable=False)
 
 
 class Fav_Planetas(Base):
