@@ -15,7 +15,7 @@ class User(Base):
     username = Column(String(200), unique=True)
     password = Column(String(200))
     state = Column(String(200))
-    favorite = relationship("favorite", back_populates="user")
+    favorite_relation = relationship("favorite", back_populates="user")
 
 
 class Favorite(Base):
@@ -27,10 +27,10 @@ class Favorite(Base):
     character_name = Column(String(100), ForeignKey('character.id'), primary_key=True)
     planet_name = Column(String(50), ForeignKey('planet.id'), primary_key=True)
     vehicle_name = Column(String(50), ForeignKey('vehicle.id'), primary_key=True)
-    user = relationship("user", back_populates="favorite")
-    character = relationship("character")
-    planeta = relationship("planeta")
-    vehicle = relationship("vehicle")
+    user_relation = relationship("user", back_populates="favorite")
+    character_relation = relationship("character")
+    planet_relation = relationship("planet")
+    vehicle_relation = relationship("vehicle")
 
 class character(Base):
     __tablename__ = "character"
@@ -39,7 +39,7 @@ class character(Base):
     eyed_color = Column(String(30), nullable = False)
     birth_year = Column(String(30), nullable = False)
     gender = Column(String(30), nullable = False)
-    favorite = relationship("favorite")
+    favorite_relation = relationship("favorite")
 
 
 class planet(Base):
@@ -49,14 +49,14 @@ class planet(Base):
     rotated_period = Column(Integer)
     diameter = Column(Integer)
     climate = Column(Integer)
-    favorite = relationship("favorite")
+    favorite_relation = relationship("favorite")
 
 class vehicle(Base):
     __tablename__= "vehicle"
     id = Column(Integer, primary_key = True)
     name = Column(String(30), nullable = False, unique = True)
     model = Column(String(30), nullable = False)
-    favorite = relationship("favorite")
+    favorite_relation = relationship("favorite")
 
 
 ## Draw from SQLAlchemy base
