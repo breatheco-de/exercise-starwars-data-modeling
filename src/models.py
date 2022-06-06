@@ -9,38 +9,34 @@ from eralchemy import render_er
 
 Base = declarative_base()
 
-
 class User(Base):
-    __tablename__ = "user"
+    __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
-    favorites = relationship('favorite', backref='user', uselist=True)
-    email = Column(String(50), unique=True, nullable=False)
-    username = Column(String(30), unique=True, nullable=False)
+    name = Column(String(250), nullable=False)
+    email = Column(String(120), unique=True, nullable=False)
+    password = Column(String(80), nullable=False)
+    posts = relationship("Post", backref="author", uselist=True)
+    followers = relationship("Follower", backref="followed", uselist=True)
 
-    def __repr__(self):
-        return '<User %r>' % self.username
-
-
-class Favorite(Base):
-    __tablename__ = "favorite"
+class Post(Base):
+    __tablename__ = 'post'
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
-    # user = relationship('user')
-    character_id = Column(Integer, ForeignKey('character.id'), nullable=False)
-    # character = relationship('character')
-    planet_id = Column(Integer, ForeignKey('planet.id'), nullable=False)
-    # planet = relationship('character)
+    user_id = Column(Integer, ForeignKey("user.id"), nullable=False)
+    url = Column(String(250), nullable=False)
+    comments = relationship("Comment", backref="post", uselist=True)
 
-
-class Character(Base):
-    __tablename__ = "character"
+class Follower(Base):
+    __tablename__ = 'follower'
     id = Column(Integer, primary_key=True)
-
-
-class Planet(Base):
-    __tablename__ = "planet"
+    user_id = Column(Integer, ForeignKey("user.id"), nullable=False)
+    
+class Comment(Base):
+    __tablename__ = 'comment'
     id = Column(Integer, primary_key=True)
+    content = Column(String(80), nullable=False)
+    user_id = Column(Integer, ForeignKey("user.id"), nullable=False)
+    post_id = Column(Integer, ForeignKey("post.id"), nullable=False)
 
-
+    
 ## Draw from SQLAlchemy base
 render_er(Base, 'diagram.png')
