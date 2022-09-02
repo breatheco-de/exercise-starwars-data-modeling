@@ -8,6 +8,7 @@
 	"technologies": ["sql", "sqlalchemy", "uml", "data-modeling"],
 	"syntax": "python",
 	"description" : "Use your recently adquired knowledge to build a data-model for your starwars blog",
+    "projectType": "project",
 	"talents": [
 		{ "badge": "fully-committed", "points": 5 }
 	]
