@@ -41,4 +41,4 @@ El proyecto está utilizando la librería Python SQLAlchemy para generar la base
 Nota: Recuerda que las relaciones pueden ser Uno-a-uno, Uno-a-muchos o Muchos-a-muchos.
 
 - Porfavor agrega por lo menos 4 modelos y sus respectivas relaciones.
-- General el `diagrama.png` utilizando el comando `$ python3 models.py` en la consola.
+- Genera el `diagrama.png` utilizando el comando `$ python3 models.py` en la consola.
