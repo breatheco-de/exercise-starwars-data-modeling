@@ -7,10 +7,13 @@ verify_ssl = true
 
 [packages]
 sqlalchemy = "*"
-eralchemy = "*"
+eralchemy2 = "*"
 
 [requires]
 python_version = "3.6"
 
 [scripts]
 diagram="python3 src/models.py"
+
+[pipenv]
+allow_prereleases = true
