@@ -62,6 +62,13 @@ class Media(Base):
     type = Column(Enum(MediaType))
     url = Column(String(250), nullable=False)
 
+class Comment(Base):
+    __tablename__ = 'comment'
+    id = Column(Integer, primary_key=True)
+    author_id = Column(Integer, ForeignKey('user.id'))
+    post_id = Column(Integer, ForeignKey('post.id'))
+    comment_text = Column(String(250), nullable=False)
+
     
 ## Draw from SQLAlchemy base
 render_er(Base, 'diagram.png')
