@@ -1,6 +1,6 @@
 import os
 import sys
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -31,43 +31,50 @@ Base = declarative_base()
 #     def to_dict(self):
 #         return {}
 
-class User(Base):
-    __tablename__ = 'user'
+class Planets(Base):
+    __tablename__ = 'planets'
     id = Column(Integer, primary_key=True)
-    username = Column(String(250), nullable=False)
-    firstname = Column(String(250), nullable=False)
-    lastname = Column(String(250), nullable=False)
-    email = Column(String(250), unique=True)
+    size = Column(Integer, nullable=False)
+    population = Column(Integer, nullable=False)
+    climate = Column(String(250), nullable=False)
+    name = Column(String(250), ForeignKey('favourites.favourite_planets'))
 
-class Follower(Base):
-    __tablename__ = 'follower'
+class Characters(Base):
+    __tablename__ = 'characters'
+    name = Column(String(250), ForeignKey('vehicle.pilot'),ForeignKey('favourites.favourite_characters'))
+    planet_from = Column(String(250), ForeignKey('planets.name'))
     id = Column(Integer, primary_key=True)
-    user_from_id = Column(Integer, ForeignKey('user.id'))
-    user_to_id = Column(Integer, ForeignKey('user.id'))
-
-class Post(Base):
-    __tablename__ = 'post'
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    age = Column(Integer, nullable=False)
 
 class MediaType(enum.Enum):
     png = "png"
     jpg = "jpg"
     gif = "gif"
 
-class Media(Base):
-    __tablename__ = 'media'
-    id = Column(Integer, primary_key=True)
-    post_id = Column(Integer, ForeignKey('post.id'))
-    type = Column(Enum(MediaType))
-    url = Column(String(250), nullable=False)
+class Favourites(Base):
+    __tablename__ = 'favourites'
+    user_id = Column(Integer,ForeignKey('users.user_id'),primary_key=True)
+    # user_id = Column(Integer, ForeignKey('users.user_id'))
+    favourite_characters = Column(Integer)
+    favourite_planets = Column(Integer)
+    favourite_vehicles = Column(Integer)
+    date_added = Column(DateTime(False))
 
-class Comment(Base):
-    __tablename__ = 'comment'
+
+
+class Vehicle(Base):
+    __tablename__ = 'vehicle'
     id = Column(Integer, primary_key=True)
-    author_id = Column(Integer, ForeignKey('user.id'))
-    post_id = Column(Integer, ForeignKey('post.id'))
-    comment_text = Column(String(250), nullable=False)
+    name = Column(String(250), ForeignKey('favourites.favourite_vehicles'))
+    pilot = Column(String(250), nullable=False)
+    type = Column(String(250), nullable=False)
+
+class Users(Base):
+    __tablename__ = 'users'
+    user_id = Column(Integer, primary_key=True)
+    username = Column(String(250), nullable=False)
+    password = Column(String(250), nullable=False)
+    type = Column(String(250), nullable=False)
 
     
 ## Draw from SQLAlchemy base
