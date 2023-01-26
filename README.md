@@ -1,6 +1,8 @@
+<!--hide-->
 # StarWars blog database
+<!--endhide-->
 
-**Important**: To do this activity you need to `fork` [this repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) into your **Github** account and then open the forked repo on Gitpod.
+**Important**: To do this activity, you need to `fork` [this repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) into your **Github** account and then open the forked repo on Gitpod.
 
 Inside the `src/models.py` file you will find a couple of classes describing an example database.
 
@@ -24,7 +26,7 @@ We are going to be creating the Entity Relationship Diagram for your StarWars Bl
 4. Open the file `diagram.png` to check out your UML diagram!
 
 
-## 📝Instructions
+## 📝 Instructions
 
 Your Job is to update the `src/models.py` file with the code needed to replicate the StarWars data model.
 
@@ -37,7 +39,7 @@ The project is using the SQLAlchemy Python library to generate the database.
 - What other tables do you think a blog like this might have?
 - What properties should go inside the user? or inside the Character or Favorite table?
 - What are the relationships between those tables?
-- Please add at least 4 models with all of its properties.
+- Please add at least 4 models with all of their properties.
 - Generate the `diagram.png` file at the end by running `$ python3 models.py` on the console.
 
 

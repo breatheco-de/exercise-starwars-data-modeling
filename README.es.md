@@ -1,4 +1,6 @@
+<!--hide-->
 # StarWars blog database (base de datos)
+<!--endhide-->
 
 **Importante**: Para realizar esta actividad necesitas hacer un `fork` de [este repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) en tu cuenta de **Github** y luego, abrir el *fork* en Gitpod.
 
@@ -40,5 +42,5 @@ El proyecto está utilizando la librería Python SQLAlchemy para generar la base
    
 Nota: Recuerda que las relaciones pueden ser Uno-a-uno, Uno-a-muchos o Muchos-a-muchos.
 
-- Porfavor agrega por lo menos 4 modelos y sus respectivas relaciones.
+- Por favor agrega por lo menos 4 modelos y sus respectivas relaciones.
 - Genera el `diagrama.png` utilizando el comando `$ python3 models.py` en la consola.
