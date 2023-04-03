@@ -20,9 +20,10 @@ class User(Base):
 
 class Favorites(Base):
     __tablename__ = 'favorites'
+    id = Column(Integer, primary_key=True)
     id_user = Column(Integer, ForeignKey('user.id'))
-    id_card = Column(Integer, ForeignKey('character.id', 'planet.id'))
-    name = Column(String(250), ForeignKey('character.name', 'planet.name'))
+    id_card = Column(Integer, ForeignKey('character.id'))
+    name = Column(String(250), ForeignKey('character.name'))
 
 class Planet(Base):
     __tablename__ = 'planet'
@@ -34,6 +35,7 @@ class Planet(Base):
 
 class Planet_Card(Base):
     __tablename__ = 'planet_card'
+    id = Column(Integer, primary_key=True)
     id_planet_card = Column(Integer, ForeignKey('planet.id'))
     image = Column(String(250))
     name = Column(String(250), ForeignKey('planet.name_planet'))
@@ -46,9 +48,11 @@ class Character(Base):
     name = Column(String(250))
     gender = Column(String(250))
     eye_color = Column(String(250))
-    hair_color   = COlumn(String(250))
+    hair_color   = Column(String(250))
 
 class Character_Card(Base):
+    __tablename__ = 'character_card'
+    id = Column(Integer, primary_key=True)
     character = relationship(Character)
     id_character = Column(Integer, ForeignKey('character.id'))
     #image = Column(String(250)) no se tendrian que poner porque salen de la relacion con la character, correcto?
