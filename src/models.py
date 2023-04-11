@@ -20,20 +20,16 @@ class User(Base):
 
 class Favorites(Base):
     __tablename__ = 'favorites'
-    id = Column(Integer, primary_key=True)
-    id_user = Column(Integer, ForeignKey('user.id'))
-    id_card_character = Column(Integer, ForeignKey('character.id'))
-    name_character = Column(String(250))
-    id_card_planet = Column(Integer, ForeignKey('planet.id'))
-    name_planet = Column(String(250))
-    categoria = Column(String(250))
+    user_id = Column(Integer, ForeignKey('user.id'))
+    card_id = Column(Integer, ForeignKey('dni.global_id'))
+    name_card = Column(String(250), primary_key=True)
+    category = Column(String(250))
 
 class Dni(Base):
     __tablename__ = 'dni'
-    id = Column(Integer, primary_key=True)
-    id_card_character = Column(Integer, ForeignKey('favorites.id_card_character'))
-    id_card_planet = Column(Integer, ForeignKey('favorites.id_card_planet'))
-
+    character_id = Column(Integer, ForeignKey('character.id'))
+    planet_id = Column(Integer, ForeignKey('planet.id'))
+    global_id = Column(Integer, primary_key=True)
 
 class Planet(Base):
     __tablename__ = 'planet'
@@ -45,11 +41,9 @@ class Planet(Base):
 
 class Planet_Card(Base):
     __tablename__ = 'planet_card'
-    planet = relationship(Planet)
-    id = Column(Integer, primary_key=True)
     id_planet_card = Column(Integer, ForeignKey('planet.id'))
     image = Column(String(250))
-    name_planet = Column(String(250))
+    name_planet = Column(String(250), primary_key=True)
     description = Column(String(500))
     climate = Column(String(250))
     population = Column(Integer)
@@ -68,11 +62,9 @@ class Character(Base):
 
 class Character_Card(Base):
     __tablename__ = 'character_card'
-    id = Column(Integer, primary_key=True)
-    character = relationship(Character)
     id_character = Column(Integer, ForeignKey('character.id'))
     image_character = Column(String(10))
-    name_character = Column(String(10))
+    name_character = Column(String(20), primary_key=True)
     description = Column(String(500))
     birthday = Column(String(10))
     gender = Column(String(10))
