@@ -40,7 +40,7 @@ El proyecto está utilizando la librería Python SQLAlchemy para generar la base
 - ¿Qué propiedades deben ir dentro de cada tabla? Por ejemplo: El usuario tiene email, password, fecha de subscripción, nombre, apellido, etc.
 - ¿Qué relaciones hay entre las tablas? ¿Cuántos planetas puede guardar un usuario?
    
-Nota: Recuerda que las relaciones pueden ser Uno-a-uno, Uno-a-muchos o Muchos-a-muchos.
+Nota: Recuerda que las relaciones pueden ser Uno-a-uno, Uno-a-muchos o Muchos-a-uno.
 
 - Por favor agrega por lo menos 4 modelos y sus respectivas relaciones.
 - Genera el `diagrama.png` utilizando el comando `$ python3 models.py` en la consola.
