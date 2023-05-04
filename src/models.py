@@ -8,7 +8,7 @@ from eralchemy2 import render_er
 Base = declarative_base()
 
 class MyUser(Base):
-    __tablename__ = 'user'
+    __tablename__ = 'my_user'
  
     id = Column(Integer, primary_key=True)
     email = Column(String(250), nullable=False, unique=True)
@@ -42,7 +42,7 @@ class Episode(Base):
 class Favorite(Base):
     __tablename__ = 'favorite'
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey('my_user.id'))
     location_id = Column(Integer, ForeignKey('location.id'))
     character_id = Column(Integer, ForeignKey('character.id'))
     episode_id = Column(Integer, ForeignKey('episode.id'))
