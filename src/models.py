@@ -22,18 +22,29 @@ class Planets(Base):
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
-    population = Column(String(10), nullable=False)
+    name = Column(String(200), nullable=False)
+    rotation_period = Column(Integer, nullable=False)
+    orbital_period = Column(Integer, nullable=False)
+    diameter = Column(Integer, nullable=False)
+    climate = Column(String(128), nullable=False)
+    gravity = Column(String(128), nullable=False)
+    terrain = Column(String(128), nullable=False)
+    population = Column(Integer, nullable=False)
+    url_image = Column(String(250), unique=False)
 
 class Characters(Base):
     __tablename__ = 'Characters'
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
-    gender = Column(String(50), nullable=False)
-    hair_color = Column(String(50), nullable=False)
-    eye_color = Column(String(50), nullable=False)
+    name = Column(String(200), nullable=False)
+    species = Column(String(200), nullable=False)
+    height = Column(Integer, nullable=False)
+    mass = Column(Integer, nullable=False)
+    eye_color = Column(Integer, nullable=False)
+    birth_year = Column(Integer, nullable=False)
+    gender = Column(String(200), nullable=False)
+    url_image = Column(String(250), unique=False)
     planet_born_id = Column(Integer, ForeignKey('Planets.id'))
 
 class Favorits(Base):
