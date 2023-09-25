@@ -1,5 +1,5 @@
 <!--hide-->
-# StarWars blog database
+Star Wars blog database
 <!--endhide-->
 
 **Important**: To do this activity, you need to `fork` [this repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) into your **Github** account and then open the forked repo on Codespaces (recommended) or Gitpod.
@@ -8,7 +8,7 @@ Inside the `src/models.py` file you will find a couple of classes describing an 
 
 Here is a 4min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
 
-We are going to be creating the Entity Relationship Diagram for your StarWars Blog Database, a very similar diagram to this one:
+We are going to be creating the Entity Relationship Diagram for your Star Wars Blog Database, a very similar diagram to this one:
 
 ![Starwars Diagram](https://github.com/breatheco-de/exercise-starwars-data-modeling/blob/master/assets/example.png?raw=true)
 [Click to open diagram](https://app.quickdatabasediagrams.com/#/d/LxNXQZ)
