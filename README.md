@@ -6,7 +6,7 @@
 
 Inside the `src/models.py` file you will find a couple of classes describing an example database.
 
-Here is a 4min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
+Here is a 10 min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
 
 We are going to be creating the Entity Relationship Diagram for your StarWars Blog Database, a very similar diagram to this one:
 
@@ -21,7 +21,7 @@ We are going to be creating the Entity Relationship Diagram for your StarWars Bl
 
 2. Install all dependencies `$ pipenv install`
 
-3. Generate de diagram as many times as you need `$ python src/models.py`
+3. Generate the diagram as many times as you need `$ python src/models.py`
 
 4. Open the file `diagram.png` to check out your UML diagram!
 
