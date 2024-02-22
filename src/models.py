@@ -7,26 +7,39 @@ from eralchemy2 import render_er
 
 Base = declarative_base()
 
-class Person(Base):
-    __tablename__ = 'person'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
+class User(Base):
+    __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
+    username= Column(String(50),nullable=False)
+    password = Column(String(50), nullable=False)
+    name = Column(String(100), nullable=False)
+    surname = Column(String(100), nullable=False)
+    email = Column(String(200), nullable=False)
 
-class Address(Base):
-    __tablename__ = 'address'
-    # Here we define columns for the table address.
-    # Notice that each column is also a normal Python instance attribute.
+class Planet(Base):
+    __tablename__ = 'planet'
     id = Column(Integer, primary_key=True)
-    street_name = Column(String(250))
-    street_number = Column(String(250))
-    post_code = Column(String(250), nullable=False)
-    person_id = Column(Integer, ForeignKey('person.id'))
-    person = relationship(Person)
+    name = Column(String(100), nullable=False)
+    description = Column(String(1000), nullable=False)
 
-    def to_dict(self):
-        return {}
+class Character(Base):
+    __tablename__ = 'character'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(100), nullable=False)
+    description = Column(String(1000), nullable=False)
+
+class Favorite(Base):
+    __tablename__ = 'favorites'
+    id = Column(Integer,primary_key=True)
+    user_id = Column(Integer,ForeignKey('user.id'))
+    username = Column(String(50),nullable=False)
+    user = relationship(User)
+    planet_id = Column(Integer,ForeignKey('planet.id'))
+    planet_name = Column(String(100), nullable=False)
+    planet = relationship(Planet)
+    char_id = Column(Integer,ForeignKey('character.id'))
+    char = Column(String(100), nullable=False)
+    planet = relationship(Character)
 
 ## Draw from SQLAlchemy base
 render_er(Base, 'diagram.png')
