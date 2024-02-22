@@ -47,32 +47,32 @@ class CharacterFilm(Base):
     character_id = Column(Integer,ForeignKey('characters.character_id'))
     film_id = Column(Integer,ForeignKey('films.film_id'))
     minutes = Column(Integer,nullable=True)
-    characters = relationship(Character,ForeignKeys=['character_id'])
-    films = relationship(Film,ForeignKeys=['film_id'])
+    characters = relationship(Character)
+    films = relationship(Film)
 
 class FavoriteCharacters(Base):
     __tablename__ = 'favorite_characters'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer,ForeignKey('users.user_id'))
     character_id = Column(Integer,ForeignKey('characters.character_id'))
-    characters = relationship(Character,ForeignKeys=['character_id'])
-    users = relationship(User,ForeignKeys=['user_id'])
+    characters = relationship(Character)
+    users = relationship(User)
 
 class FavoriteFilms(Base):
-    __tablename__ = 'favorite_characters'
+    __tablename__ = 'favorite_films'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer,ForeignKey('users.user_id'))
     film_id = Column(Integer,ForeignKey('films.film_id'))
-    users = relationship(User,ForeignKeys=['user_id'])
-    films = relationship(Film,ForeignKeys=['film_id'])
+    users = relationship(User)
+    films = relationship(Film)
 
 class FavoritePlanets(Base):
-    __tablename__ = 'favorite_characters'
+    __tablename__ = 'favorite_planets'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer,ForeignKey('users.user_id'))
     planet_id = Column(Integer,ForeignKey('planets.planet_id'))
-    users = relationship(User,ForeignKeys=['user_id'])
-    planets = relationship(Planet,ForeignKeys=['planet_id'])
+    users = relationship(User)
+    planets = relationship(Planet)
 
 
 ## Draw from SQLAlchemy base
