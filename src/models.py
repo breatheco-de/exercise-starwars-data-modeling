@@ -1,6 +1,6 @@
 import os
 import sys
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.orm import relationship, declarative_base
 from sqlalchemy import create_engine
 from eralchemy2 import render_er
@@ -47,32 +47,35 @@ class CharacterFilm(Base):
     character_id = Column(Integer,ForeignKey('characters.character_id'))
     film_id = Column(Integer,ForeignKey('films.film_id'))
     minutes = Column(Integer,nullable=True)
-    characters = relationship(Character)
-    films = relationship(Film)
+    characters = relationship(Character,foreign_keys=[character_id])
+    films = relationship(Film,foreign_keys=[film_id])
 
 class FavoriteCharacters(Base):
     __tablename__ = 'favorite_characters'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer,ForeignKey('users.user_id'))
     character_id = Column(Integer,ForeignKey('characters.character_id'))
-    characters = relationship(Character)
-    users = relationship(User)
+    characters = relationship(Character,foreign_keys=[character_id])
+    users = relationship(User,foreign_keys=[user_id])
+    time_added = Column(DateTime,nullable=False)
 
 class FavoriteFilms(Base):
     __tablename__ = 'favorite_films'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer,ForeignKey('users.user_id'))
     film_id = Column(Integer,ForeignKey('films.film_id'))
-    users = relationship(User)
-    films = relationship(Film)
+    users = relationship(User,foreign_keys=[user_id])
+    films = relationship(Film,foreign_keys=[film_id])
+    time_added = Column(DateTime,nullable=False)
 
 class FavoritePlanets(Base):
     __tablename__ = 'favorite_planets'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer,ForeignKey('users.user_id'))
     planet_id = Column(Integer,ForeignKey('planets.planet_id'))
-    users = relationship(User)
-    planets = relationship(Planet)
+    users = relationship(User,foreign_keys=[user_id])
+    planets = relationship(Planet,foreign_keys=[planet_id])
+    time_added = Column(DateTime,nullable=False)
 
 
 ## Draw from SQLAlchemy base
