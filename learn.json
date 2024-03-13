@@ -9,6 +9,7 @@
 	"syntax": "python",
 	"description" : "Use your recently adquired knowledge to build a data-model for your starwars blog",
     "projectType": "project",
+	"solution": "https://github.com/breatheco-de/exercise-starwars-data-modeling/tree/solution",
 	"talents": [
 		{ "badge": "fully-committed", "points": 5 }
 	]
