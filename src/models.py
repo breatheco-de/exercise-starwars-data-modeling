@@ -1,32 +1,71 @@
-import os
-import sys
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, Enum
 from sqlalchemy.orm import relationship, declarative_base
-from sqlalchemy import create_engine
 from eralchemy2 import render_er
+from enum import Enum as PyEnum
 
 Base = declarative_base()
 
-class Person(Base):
-    __tablename__ = 'person'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
+class FavoriteType(PyEnum):
+    PLANET = "planet"
+    CHARACTER = "character"
+    VEHICLE = "vehicle"
+
+class User(Base):
+    __tablename__ = 'User'
+    id = Column(Integer, primary_key=True)
+    username = Column(String(250), unique=True, nullable=False)
+    email = Column(String(250), unique=True, nullable=False)
+    password = Column(String(250), nullable=False)
+    
+    favorites = relationship('Favorite', back_populates='user')
+
+class Planet(Base):
+    __tablename__ = 'Planet'
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
+    climate = Column(String(250))
+    terrain = Column(String(250))
+    population = Column(Integer)
+    
+    favorites = relationship('Favorite', back_populates='planet')
 
-class Address(Base):
-    __tablename__ = 'address'
-    # Here we define columns for the table address.
-    # Notice that each column is also a normal Python instance attribute.
+class Character(Base):
+    __tablename__ = 'Character'
     id = Column(Integer, primary_key=True)
-    street_name = Column(String(250))
-    street_number = Column(String(250))
-    post_code = Column(String(250), nullable=False)
-    person_id = Column(Integer, ForeignKey('person.id'))
-    person = relationship(Person)
+    name = Column(String(250), nullable=False)
+    species = Column(String(250))
+    homeworld = Column(String(250))
+    
+    favorites = relationship('Favorite', back_populates='character')
 
-    def to_dict(self):
-        return {}
+class Vehicle(Base):
+    __tablename__ = 'Vehicle'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(250), nullable=False)
+    model = Column(String(250))
+    hp = Column(Integer)
+    
+    favorites = relationship('Favorite', back_populates='vehicle')
 
-## Draw from SQLAlchemy base
-render_er(Base, 'diagram.png')
+class Favorite(Base):
+    __tablename__ = 'Favorite'
+    user_id = Column(Integer, ForeignKey('User.id'), primary_key=True)
+    item_id = Column(Integer, primary_key=True)
+    item_type = Column(Enum(FavoriteType), nullable=False)
+
+    user = relationship('User', back_populates='favorites')
+    planet_id = Column(Integer, ForeignKey('Planet.id'))
+    planet = relationship('Planet', back_populates='favorites')
+    
+    character_id = Column(Integer, ForeignKey('Character.id'))
+    character = relationship('Character', back_populates='favorites')
+    
+    vehicle_id = Column(Integer, ForeignKey('Vehicle.id'))
+    vehicle = relationship('Vehicle', back_populates='favorites')
+
+try:
+    result = render_er(Base, 'diagram.png')
+    print("Success! Check the diagram.png file")
+except Exception as e:
+    print("There was a problem generating the diagram")
+    raise 
