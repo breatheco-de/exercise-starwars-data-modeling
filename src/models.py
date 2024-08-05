@@ -1,71 +1,65 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, Enum
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship, declarative_base
-from eralchemy2 import render_er
-from enum import Enum as PyEnum
 
 Base = declarative_base()
 
-class FavoriteType(PyEnum):
-    PLANET = "planet"
-    CHARACTER = "character"
-    VEHICLE = "vehicle"
-
 class User(Base):
-    __tablename__ = 'User'
+    __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     username = Column(String(250), unique=True, nullable=False)
     email = Column(String(250), unique=True, nullable=False)
     password = Column(String(250), nullable=False)
+    name = Column(String(250), nullable=False)
+    lastname = Column(String(250), nullable=False)
     
-    favorites = relationship('Favorite', back_populates='user')
+    favorite_characters = relationship('FavoriteCharacter', back_populates='user')
+    favorite_planets = relationship('FavoritePlanet', back_populates='user')
+    favorite_vehicles = relationship('FavoriteVehicle', back_populates='user')
 
 class Planet(Base):
-    __tablename__ = 'Planet'
+    __tablename__ = 'planet'
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     climate = Column(String(250))
     terrain = Column(String(250))
     population = Column(Integer)
     
-    favorites = relationship('Favorite', back_populates='planet')
-
 class Character(Base):
-    __tablename__ = 'Character'
+    __tablename__ = 'character'
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     species = Column(String(250))
     homeworld = Column(String(250))
     
-    favorites = relationship('Favorite', back_populates='character')
+    favorite_characters = relationship('FavoriteCharacter', back_populates='character')
 
 class Vehicle(Base):
-    __tablename__ = 'Vehicle'
+    __tablename__ = 'vehicle'
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     model = Column(String(250))
     hp = Column(Integer)
-    
-    favorites = relationship('Favorite', back_populates='vehicle')
 
-class Favorite(Base):
-    __tablename__ = 'Favorite'
-    user_id = Column(Integer, ForeignKey('User.id'), primary_key=True)
-    item_id = Column(Integer, primary_key=True)
-    item_type = Column(Enum(FavoriteType), nullable=False)
+class FavoriteCharacter(Base):
+    __tablename__ = 'favorite_character'
+    user_id = Column(Integer, ForeignKey('user.id'), primary_key=True)
+    character_id = Column(Integer, ForeignKey('character.id'), primary_key=True)
 
-    user = relationship('User', back_populates='favorites')
-    planet_id = Column(Integer, ForeignKey('Planet.id'))
-    planet = relationship('Planet', back_populates='favorites')
-    
-    character_id = Column(Integer, ForeignKey('Character.id'))
-    character = relationship('Character', back_populates='favorites')
-    
-    vehicle_id = Column(Integer, ForeignKey('Vehicle.id'))
-    vehicle = relationship('Vehicle', back_populates='favorites')
+    user = relationship('User', back_populates='favorite_characters')
+    character = relationship('Character', back_populates='favorite_characters')
 
-try:
-    result = render_er(Base, 'diagram.png')
-    print("Success! Check the diagram.png file")
-except Exception as e:
-    print("There was a problem generating the diagram")
-    raise 
+class FavoritePlanet(Base):
+    __tablename__ = 'favorite_planet'
+    user_id = Column(Integer, ForeignKey('user.id'), primary_key=True)
+    planet_id = Column(Integer, ForeignKey('planet.id'), primary_key=True)
+
+    user = relationship('User', back_populates='favorite_planets')
+    planet = relationship('Planet', back_populates='favorite_planets')
+
+class FavoriteVehicle(Base):
+    __tablename__ = 'favorite_vehicle'
+    user_id = Column(Integer, ForeignKey('user.id'), primary_key=True)
+    vehicle_id = Column(Integer, ForeignKey('vehicle.id'), primary_key=True)
+
+    user = relationship('User', back_populates='favorite_vehicles')
+    vehicle = relationship('Vehicle', back_populates='favorite_vehicles')
