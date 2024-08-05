@@ -23,6 +23,9 @@ class Planet(Base):
     climate = Column(String(250))
     terrain = Column(String(250))
     population = Column(Integer)
+
+    favorite_planets = relationship('FavoritePlanet', back_populates='character')
+
     
 class Character(Base):
     __tablename__ = 'character'
@@ -40,6 +43,8 @@ class Vehicle(Base):
     model = Column(String(250))
     hp = Column(Integer)
 
+    favorite_vehicles = relationship('FavoriteVehicle', back_populates='user')
+ 
 class FavoriteCharacter(Base):
     __tablename__ = 'favorite_character'
     user_id = Column(Integer, ForeignKey('user.id'), primary_key=True)
