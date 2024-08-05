@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship, declarative_base
+from eralchemy2 import render_er
 
 Base = declarative_base()
 
@@ -68,3 +69,10 @@ class FavoriteVehicle(Base):
 
     user = relationship('User', back_populates='favorite_vehicles')
     vehicle = relationship('Vehicle', back_populates='favorite_vehicles')
+
+try:
+    result = render_er(Base, 'diagram.png')
+    print("Success! Check the diagram.png file")
+except Exception as e:
+    print( "There was a problem generating the diagram")
+    raise 
