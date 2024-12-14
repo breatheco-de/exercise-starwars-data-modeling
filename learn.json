@@ -3,12 +3,14 @@
 	"title" : "Data Modeling a StarWars Blog",
 	"slug" : "starwars-data-modeling",
 	"duration" : 3,
+	"template_url": "self",
 	"difficulty": "easy",
 	"preview": "https://github.com/breatheco-de/exercise-starwars-data-modeling/blob/master/assets/preview.png?raw=true",
 	"technologies": ["sql", "sqlalchemy", "uml", "data-modeling"],
 	"syntax": "python",
 	"description" : "Use your recently adquired knowledge to build a data-model for your starwars blog",
     "projectType": "project",
+	"autoPlay": "false",
 	"solution": "https://github.com/breatheco-de/exercise-starwars-data-modeling/tree/solution",
 	"talents": [
 		{ "badge": "fully-committed", "points": 5 }
