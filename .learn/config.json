@@ -1,0 +1,111 @@
+{
+    "config": {
+        "port": 3000,
+        "os": "darwin",
+        "editor": {
+            "mode": "extension",
+            "agent": "vscode",
+            "version": "5.0.77"
+        },
+        "dirPath": "./.learn",
+        "configPath": "learn.json",
+        "outputPath": ".learn/dist",
+        "publicPath": "/preview",
+        "publicUrl": "http://localhost:3000",
+        "contact": "https://github.com/learnpack/learnpack/issues/new",
+        "language": "auto",
+        "autoPlay": true,
+        "projectType": "project",
+        "grading": "isolated",
+        "exercisesPath": "./",
+        "webpackTemplate": null,
+        "disableGrading": false,
+        "disabledActions": [],
+        "actions": [],
+        "entries": {
+            "html": "index.html",
+            "vanillajs": "index.js",
+            "react": "app.jsx",
+            "node": "app.js",
+            "python3": "app.py",
+            "java": "app.java"
+        },
+        "suggestions": {
+            "agent": "vscode"
+        },
+        "warnings": {
+            "agent": null
+        },
+        "status": "published",
+        "title": "Data Modeling a StarWars Blog",
+        "slug": "starwars-data-modeling",
+        "duration": 3,
+        "difficulty": "easy",
+        "preview": "https://github.com/breatheco-de/exercise-starwars-data-modeling/blob/master/assets/preview.png?raw=true",
+        "technologies": [
+            "sql",
+            "sqlalchemy",
+            "uml",
+            "data-modeling"
+        ],
+        "syntax": "python",
+        "description": "Use your recently adquired knowledge to build a data-model for your starwars blog",
+        "solution": "https://github.com/breatheco-de/exercise-starwars-data-modeling/tree/solution",
+        "talents": [
+            {
+                "badge": "fully-committed",
+                "points": 5
+            }
+        ],
+        "translations": []
+    },
+    "address": "http://localhost:3000",
+    "currentExercise": null,
+    "exercises": [
+        {
+            "position": 0,
+            "path": "assets",
+            "slug": "assets",
+            "translations": {},
+            "language": null,
+            "entry": null,
+            "title": "assets",
+            "graded": false,
+            "files": [
+                {
+                    "path": "assets/example.png",
+                    "name": "example.png",
+                    "hidden": true
+                },
+                {
+                    "path": "assets/preview.png",
+                    "name": "preview.png",
+                    "hidden": true
+                }
+            ],
+            "done": false
+        },
+        {
+            "position": 1,
+            "path": "src",
+            "slug": "src",
+            "translations": {},
+            "language": "python3",
+            "entry": null,
+            "title": "src",
+            "graded": false,
+            "files": [
+                {
+                    "path": "src/models.py",
+                    "name": "models.py",
+                    "hidden": false
+                }
+            ],
+            "done": false
+        }
+    ],
+    "bugsLink": null,
+    "videoSolutions": false,
+    "localhostOnly": false,
+    "session": 8619093726391456000
+}
