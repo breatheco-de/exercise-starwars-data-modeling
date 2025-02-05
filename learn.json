@@ -1,6 +1,10 @@
 {
-	"status": "published",
-	"title" : "Data Modeling a StarWars Blog",
+	"gitpod": true,
+        "status": "published",
+	"title" : {
+    "us": "Data Modeling a StarWars Blog",
+    "es": "Modelo de Datos del blog de StarWars"
+},
 	"slug" : "starwars-data-modeling",
 	"duration" : 3,
 	"template_url": "self",
@@ -8,11 +12,17 @@
 	"preview": "https://github.com/breatheco-de/exercise-starwars-data-modeling/blob/master/assets/preview.png?raw=true",
 	"technologies": ["sql", "sqlalchemy", "uml", "data-modeling"],
 	"syntax": "python",
-	"description" : "Use your recently adquired knowledge to build a data-model for your starwars blog",
+	"description" : {
+    "us": "Design and implement a Star Wars-themed database model using SQLAlchemy! This project focuses on structuring data for a blog where users can save their favorite characters and planets. You'll create an optimized relational database, define entity relationships, and generate an ER diagram to visualize the data model.",
+    "es": "Usa tus conocimientos recientemente adquiridos para crear un modelo de datos para un blog de Star Wars. En este proyecto, diseñarás la estructura de una base de datos, estableciendo relaciones entre usuarios, personajes y planetas. Aprenderás sobre modelado de datos, diagramas UML y SQLAlchemy, mejorando tus habilidades en bases de datos."
+},
     "projectType": "project",
 	"autoPlay": "false",
 	"solution": "https://github.com/breatheco-de/exercise-starwars-data-modeling/tree/solution",
 	"talents": [
 		{ "badge": "fully-committed", "points": 5 }
-	]
+	],
+	"telemetry": {
+    "batch": "https://breathecode.herokuapp.com/v1/assignment/me/telemetry?asset_id=210"
+}
 }
