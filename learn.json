@@ -7,6 +7,7 @@
 },
 	"slug" : "starwars-data-modeling",
 	"duration" : 3,
+	"template_url": "self",
 	"difficulty": "easy",
 	"preview": "https://github.com/breatheco-de/exercise-starwars-data-modeling/blob/master/assets/preview.png?raw=true",
 	"technologies": ["sql", "sqlalchemy", "uml", "data-modeling"],
@@ -16,6 +17,7 @@
     "es": "Usa tus conocimientos recientemente adquiridos para crear un modelo de datos para un blog de Star Wars. En este proyecto, diseñarás la estructura de una base de datos, estableciendo relaciones entre usuarios, personajes y planetas. Aprenderás sobre modelado de datos, diagramas UML y SQLAlchemy, mejorando tus habilidades en bases de datos."
 },
     "projectType": "project",
+	"autoPlay": "false",
 	"solution": "https://github.com/breatheco-de/exercise-starwars-data-modeling/tree/solution",
 	"talents": [
 		{ "badge": "fully-committed", "points": 5 }
