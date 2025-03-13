@@ -7,7 +7,7 @@
 },
 	"slug" : "starwars-data-modeling",
 	"duration" : 3,
-	"template_url": "self",
+	"template_url": "https://github.com/4GeeksAcademy/flask-rest-hello",
 	"difficulty": "easy",
 	"preview": "https://github.com/breatheco-de/exercise-starwars-data-modeling/blob/master/assets/preview.png?raw=true",
 	"technologies": ["sql", "sqlalchemy", "uml", "data-modeling"],

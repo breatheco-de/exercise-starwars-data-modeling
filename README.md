@@ -7,10 +7,10 @@
 ## 🌱 How to start this project
 
 
-**Important**: To do this activity, you need to `fork` [this repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) into your **Github** account and then open the forked repo on [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or Gitpod.
+**Important**: To do this activity, you need to `fork` [this repo](https://github.com/4GeeksAcademy/flask-rest-hello) into your **Github** account and then open the forked repo on [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or Gitpod.
 
 
-Inside the `src/models.py` file you will find a couple of classes describing an example database.
+In the `src/models.py` file of the forked repository, you will find several classes that represent the structure of a sample database.
 
 Here is a 10 min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
 
@@ -29,9 +29,9 @@ We are going to be creating the Entity Relationship Diagram for your StarWars Bl
 
 2. Install all dependencies `$ pipenv install`
 
-3. Generate the diagram as many times as you need `$ python src/models.py`
+3. To generate a database diagram as many times as needed, run `$ pipenv run diagram`
 
-4. Open the file `diagram.png` to check out your UML diagram!
+4. Once the `diagram.png` file is created in the root of the project, open it to see the UML representation of your database.
 
 
 ## 📝 Instructions
@@ -48,7 +48,7 @@ The project is using the SQLAlchemy Python library to generate the database.
 - What properties should go inside the user? or inside the Character or Favorite table?
 - What are the relationships between those tables?
 - Please add at least 4 models with all of their properties.
-- Generate the `diagram.png` file at the end by running `$ python src/models.py` on the console.
+- Generate the `diagram.png` file at the end by running `$ pipenv run diagram` on the console.
 
 This and many other projects are built by students as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
 
