@@ -7,7 +7,7 @@
 ## 🌱 How to start this project
 
 
-**Important**: To do this activity, you need to `fork` [this repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) into your **Github** account and then open the forked repo on [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or Gitpod.
+**Important**: To do this activity, you need to `fork` [this repo](https://github.com/4GeeksAcademy/flask-rest-hello) into your **Github** account and then open the forked repo on [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or Gitpod.
 
 
 In the `src/models.py` file of the forked repository, you will find several classes that represent the structure of a sample database.
