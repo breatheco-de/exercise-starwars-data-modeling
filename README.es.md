@@ -9,7 +9,8 @@
 **Importante**: Para realizar esta actividad necesitas hacer un `fork` de [este repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) en tu cuenta de **Github** y luego, abre el *fork* en [Codespaces](https://4geeks.com/es/lesson/tutorial-de-github-codespaces) (recomendado) o Gitpod.
 
 
-Dentro del archivo `src/models.py` encontrarás un par de clases que describen una base de datos de ejemplo.
+En el archivo `src/models.py` del repositorio forkeado, encontrarás varias clases que representan la estructura de una base de datos de ejemplo.
+
 
 Aquí hay un video de 10 minutos que explica qué es UML: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
 
@@ -28,9 +29,10 @@ Vamos a crear el Diagrama de relación de entidad para la base de datos de un bl
 
 2. Instala todas las dependencias `$ pipenv install`
 
-3. Genera el diagrama tantas veces como sea necesario `$ python src/models.py`
+3. Para generar un diagrama de la base de datos tantas veces como sea necesario `$ pipenv run diagram`
 
-4. ¡Abre el archivo `diagram.png` para ver tu diagrama UML!
+4. Una vez creado el archivo `diagram.png` en la raiz del proyecto, abrelo para ver la representación UML de tu base de datos.
+
 
 ## 📝 Instrucciones
 
@@ -49,7 +51,7 @@ El proyecto está utilizando la librería Python SQLAlchemy para generar la base
 Nota: Recuerda que las relaciones pueden ser Uno-a-uno, Uno-a-muchos o Muchos-a-muchos.
 
 - Por favor, agrega por lo menos 4 modelos y sus respectivas relaciones.
-- Genera el `diagram.png` utilizando el comando `$ python src/models.py` en la consola.
+- Genera el `diagram.png` utilizando el comando `$ pipenv run diagram` en la consola.
 
 Este y otros proyectos son usados para [aprender a programar](https://4geeksacademy.com/es/aprender-a-programar/aprender-a-programar-desde-cero) por parte de los alumnos de 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) realizado por [Alejandro Sánchez](https://twitter.com/alesanchezr) y muchos otros contribuyentes. Conoce más sobre nuestros [Cursos de Programación](https://4geeksacademy.com/es/curso-de-programacion-desde-cero?lang=es) para convertirte en [Full Stack Developer](https://4geeksacademy.com/es/coding-bootcamps/desarrollador-full-stack/?lang=es), o nuestro [Data Science Bootcamp](https://4geeksacademy.com/es/coding-bootcamps/curso-datascience-machine-learning).
 
